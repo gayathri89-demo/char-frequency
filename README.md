@@ -20,3 +20,8 @@ Counts occurrences of each character in a string, preserving first appearance.
 ## Architecture
 - `src/charFrequency.js` - main logic
 - `tests/charFrequency.test.js` - unit tests
+
+## Run with custom input
+
+```bash
+node src/charFrequency.js "your text here"
