@@ -24,3 +24,8 @@ if (require.main === module) {
     const input = "hello world";
     console.log(countCharacterFrequency(input));
 }
+
+if (require.main === module) {
+    const input = "hello world";
+    console.log(countCharacterFrequency(input));
+}
