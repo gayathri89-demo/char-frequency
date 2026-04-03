@@ -18,3 +18,10 @@ if (require.main === module) {
     const input = "hello world";
     console.log(countCharacterFrequency(input));
 }
+
+// 👇 CLI input
+if (require.main === module) {
+    const input = process.argv.slice(2).join(' '); // get user input
+    console.log(countCharacterFrequency(input));
+}
+
