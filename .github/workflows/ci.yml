@@ -40,5 +40,5 @@ jobs:
     - name: Upload Test Report
       uses: actions/upload-artifact@v4
       with:
-        name: test-report
+        name: test-report-${{ matrix.node-version }}
         path: test-reports/test-report.txt
