@@ -1,0 +1,38 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run Tests
+      run: |
+        mkdir -p test-reports
+        npx jest --colors > test-reports/test-report.txt
+        cat test-reports/test-report.txt
+
+    - name: Upload Test Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-report
+        path: test-reports/test-report.txt
