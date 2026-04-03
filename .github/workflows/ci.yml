@@ -1,5 +1,6 @@
 name: Node.js CI
 
+# Trigger on push or pull request to main branch
 on:
   push:
     branches: [ main ]
@@ -11,26 +12,31 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [18.x, 20.x]  # Test on multiple Node versions
 
     steps:
+    # Step 1: Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    # Step 2: Setup Node.js
+    - name: Setup Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
 
+    # Step 3: Install dependencies
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
-    - name: Run Tests
+    # Step 4: Run Jest tests
+    - name: Run tests and save report
       run: |
         mkdir -p test-reports
         npx jest --colors > test-reports/test-report.txt
         cat test-reports/test-report.txt
 
+    # Step 5: Upload test report as artifact
     - name: Upload Test Report
       uses: actions/upload-artifact@v4
       with:
