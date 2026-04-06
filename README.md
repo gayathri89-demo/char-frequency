@@ -25,19 +25,27 @@ Output: h:1, e:1, l:3, o:2, :1, w:1, r:1, d:1
 ---
 
 ## Project Structure
+
 char-frequency/
 ├─ src/
-│ └─ charFrequency.js
+│  ├─ charFrequency.js        # main logic + CLI entry
+│  └─ data/
+│     └─ input.txt           # external input file
+│
 ├─ tests/
-│ └─ charFrequency.test.js
+│  └─ charFrequency.test.js  # unit tests
+│
 ├─ test-reports/
-│ └─ test-report.txt
+│  └─ test-report.txt        # generated test output
+│
 ├─ .github/
-│ └─ workflows/
-│ └─ ci.yml
+│  └─ workflows/
+│     └─ ci.yml              # GitHub Actions workflow
+│
 ├─ package.json
 ├─ package-lock.json
 ├─ README.md
+├─ .gitignore
 
 # Setup
 1. Clone the repository
