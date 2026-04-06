@@ -1,9 +1,10 @@
 # String Character Frequency
-## Overview
+
+# Overview
 
 This project is a Node.js application that counts the occurrences of each character in a string while preserving the order of first appearance.
 
-### Example
+# Example
 
 Input: hello world
 Output: h:1, e:1, l:3, o:2, :1, w:1, r:1, d:1
@@ -11,7 +12,7 @@ Output: h:1, e:1, l:3, o:2, :1, w:1, r:1, d:1
 
 ---
 
-## Features
+# Features
 
 - Counts all characters (letters, spaces, special characters)
 - Maintains order of first appearance
@@ -38,51 +39,56 @@ char-frequency/
 ├─ package-lock.json
 ├─ README.md
 
-## Setup
-### 1. Clone the repository
+# Setup
+1. Clone the repository
 
 git clone https://github.com/your-username/char-frequency.git
 cd char-frequency
 
-### 2. Install dependencies 
+2. Install dependencies 
 `npm install`
 
 
 ---
 
-## Usage
+# Usage
 
-### Run with custom input (CLI)
+# Run with custom input (CLI)
 node src/charFrequency.js "your text here"
 
-### Example
+# Run with external file input
+node src/charFrequency.js
+
+When no CLI input is provided, input is read from:
+src/data/input.txt
+
+# Example
 
 node src/charFrequency.js "hello world"
 Output: h:1, e:1, l:3, o:2, :1, w:1, r:1, d:1
 
-### Expected Output
+# Expected Output
 Test Suites: 1 passed, 1 total
 Tests: 5 passed, 5 total
 
-### Generate Test Report
+# Generate Test Report
 
-#### Windows Command Prompt
+# Windows Command Prompt
 npx jest --verbose > test-reports\test-report.txt 2>&1
 
-## Run Tests
+# Run Tests
 `npm test`
 
-## Assumptions
+# Assumptions
 - Case-sensitive
 - Spaces and special characters included
 - Empty string returns empty output
 
-## Architecture
+# Architecture
 - `src/charFrequency.js` - main logic
 - `tests/charFrequency.test.js` - unit tests
 
-
-## Test Evidence
+# Test Evidence
 
 This project includes:
 
@@ -91,16 +97,15 @@ CLI execution examples
 GitHub Actions workflow logs
 CI artifact uploads
 
-## Cross-Browser Testing
+# Cross-Browser Testing
 
 Cross-browser testing is not applicable because this project is a Node.js CLI application and does not involve browser-based UI.
 
-
-## CI/CD (GitHub Actions)
+# CI/CD (GitHub Actions)
 
 This project uses GitHub Actions to automate testing.
 
-### Workflow Features
+# Workflow Features
 
 - Runs on push and pull request
 - Tests on multiple Node versions (18, 20)
@@ -108,7 +113,7 @@ This project uses GitHub Actions to automate testing.
 - Generates test report
 - Uploads report as artifact
 
-### Sample Workflow Step
+# Sample Workflow Step
 
 ```yaml
 - name: Run tests
